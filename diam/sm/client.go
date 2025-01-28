@@ -155,36 +155,36 @@ func (cli *Client) validate() error {
 		cli.WatchdogInterval = 5 * time.Second
 	}
 	// Make sure the applications supplied to Client are supported locally
-	for _, submittedAcctApp := range cli.AcctApplicationID {
-		acctAppID := uint32(submittedAcctApp.Data.(datatype.Unsigned32))
-		isSupported := false
-		for _, localApp := range cli.Handler.supportedApps {
-			if localApp.AppType == "acct" && localApp.ID == acctAppID {
-				isSupported = true
-				break
-			}
-		}
-		if isSupported == false {
-			err := fmt.Errorf("Client attempts to advertise unsupported application - type: acct, id: %d", acctAppID)
-			return err
-		}
+	// for _, submittedAcctApp := range cli.AcctApplicationID {
+	// 	acctAppID := uint32(submittedAcctApp.Data.(datatype.Unsigned32))
+	// 	isSupported := false
+	// 	for _, localApp := range cli.Handler.supportedApps {
+	// 		if localApp.AppType == "acct" && localApp.ID == acctAppID {
+	// 			isSupported = true
+	// 			break
+	// 		}
+	// 	}
+	// 	if isSupported == false {
+	// 		err := fmt.Errorf("Client attempts to advertise unsupported application - type: acct, id: %d", acctAppID)
+	// 		return err
+	// 	}
 
-	}
-	for _, submittedAuthApp := range cli.AuthApplicationID {
-		authAppID := uint32(submittedAuthApp.Data.(datatype.Unsigned32))
-		isSupported := false
-		for _, localApp := range cli.Handler.supportedApps {
-			if localApp.AppType == "auth" && localApp.ID == authAppID {
-				isSupported = true
-				break
-			}
-		}
-		if isSupported == false {
-			err := fmt.Errorf("Client attempts to advertise unsupported application - type: auth, id: %d", authAppID)
-			return err
-		}
+	// }
+	// for _, submittedAuthApp := range cli.AuthApplicationID {
+	// 	authAppID := uint32(submittedAuthApp.Data.(datatype.Unsigned32))
+	// 	isSupported := false
+	// 	for _, localApp := range cli.Handler.supportedApps {
+	// 		if localApp.AppType == "auth" && localApp.ID == authAppID {
+	// 			isSupported = true
+	// 			break
+	// 		}
+	// 	}
+	// 	if isSupported == false {
+	// 		err := fmt.Errorf("Client attempts to advertise unsupported application - type: auth, id: %d", authAppID)
+	// 		return err
+	// 	}
 
-	}
+	// }
 	return nil
 }
 
