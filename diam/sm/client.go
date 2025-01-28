@@ -173,9 +173,7 @@ func (cli *Client) validate() error {
 	for _, submittedAuthApp := range cli.AuthApplicationID {
 		authAppID := uint32(submittedAuthApp.Data.(datatype.Unsigned32))
 		isSupported := false
-		fmt.Printf("Handler -> \n%+v\n", cli.Handler)
 		for _, localApp := range cli.Handler.supportedApps {
-			fmt.Printf("Supported Apps -> \n%+v\n", localApp)
 			if localApp.AppType == "auth" && localApp.ID == authAppID {
 				isSupported = true
 				break
