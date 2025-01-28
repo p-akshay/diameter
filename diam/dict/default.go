@@ -18,7 +18,7 @@ var Default *Parser
 func init() {
 	var dictionaries = []struct{ name, xml string }{
 		{"Base", baseXML},
-		{"3GPP Rx", rxXML},
+		{"Rx", rxXML},
 		{"Credit Control", creditcontrolXML},
 		{"Gx Charging Control", gxcreditcontrolXML},
 		{"Network Access Server", networkaccessserverXML},
@@ -572,7 +572,7 @@ var baseXML = `<?xml version="1.0" encoding="UTF-8"?>
 var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 <diameter>
 
-	<application id="16777236" name="Rx"> <!-- Diameter Common Messages -->
+	<application id="16777236" name="rx"> <!-- Diameter Common Messages -->
 
 		<command code="257" short="CE" name="Capabilities-Exchange">
 			<request>
