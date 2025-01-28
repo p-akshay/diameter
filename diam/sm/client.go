@@ -168,23 +168,25 @@ func (cli *Client) validate() error {
 	// 		err := fmt.Errorf("Client attempts to advertise unsupported application - type: acct, id: %d", acctAppID)
 	// 		return err
 	// 	}
-
 	// }
-	// for _, submittedAuthApp := range cli.AuthApplicationID {
-	// 	authAppID := uint32(submittedAuthApp.Data.(datatype.Unsigned32))
-	// 	isSupported := false
-	// 	for _, localApp := range cli.Handler.supportedApps {
-	// 		if localApp.AppType == "auth" && localApp.ID == authAppID {
-	// 			isSupported = true
-	// 			break
-	// 		}
-	// 	}
-	// 	if isSupported == false {
-	// 		err := fmt.Errorf("Client attempts to advertise unsupported application - type: auth, id: %d", authAppID)
-	// 		return err
-	// 	}
 
-	// }
+	for _, submittedAuthApp := range cli.AuthApplicationID {
+		authAppID := uint32(submittedAuthApp.Data.(datatype.Unsigned32))
+		isSupported := false
+		fmt.Printf("Handler -> \n%+v\n", cli.Handler)
+		for _, localApp := range cli.Handler.supportedApps {
+			fmt.Printf("Supported Apps -> \n%+v\n", localApp)
+			if localApp.AppType == "auth" && localApp.ID == authAppID {
+				isSupported = true
+				break
+			}
+		}
+		if !isSupported {
+			err := fmt.Errorf("client attempts to advertise unsupported application - type: auth, id: %d", authAppID)
+			return err
+		}
+
+	}
 	return nil
 }
 
