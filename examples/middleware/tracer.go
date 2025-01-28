@@ -3,8 +3,8 @@ package middleware
 import (
 	"strings"
 
-	"github.com/fiorix/go-diameter/v4/diam"
 	"github.com/opentracing/opentracing-go"
+	"github.com/p-akshay/diameter/v4/diam"
 )
 
 type Tracer struct {

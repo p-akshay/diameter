@@ -19,8 +19,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/fiorix/go-diameter/v4/diam"
-	"github.com/fiorix/go-diameter/v4/diam/dict"
+	"github.com/p-akshay/diameter/v4/diam"
+	"github.com/p-akshay/diameter/v4/diam/dict"
 )
 
 // A Bridge between two peers.
