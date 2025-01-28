@@ -135,6 +135,7 @@ var Default *Parser
 func init() {
 	var dictionaries = []struct{ name, xml string }{
 		{"Base", baseXML},
+		{"Rx", rxXML},
 		{"Credit Control", creditcontrolXML},
 		{"Gx Charging Control", gxcreditcontrolXML},
 		{"Network Access Server", networkaccessserverXML},
