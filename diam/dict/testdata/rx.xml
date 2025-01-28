@@ -524,6 +524,4 @@
 
 
 	</application>
-	<application id="3" type="acct" name="Base Accounting"> <!-- Diameter Base Accounting Messages -->
-	</application>
 </diameter>

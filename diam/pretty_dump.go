@@ -96,6 +96,8 @@ func appIdToString(appId int) string {
 	//	return "TGPP_APP_ID"
 	case GX_CHARGING_CONTROL_APP_ID:
 		return "Gx"
+	case RX_APP_ID:
+		return "rx"
 	case TGPP_S6A_APP_ID:
 		return "S6A"
 	case TGPP_SWX_APP_ID:
