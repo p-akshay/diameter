@@ -617,6 +617,12 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 				<rule avp="Origin-Realm" required="true" max="1"/>
 				<rule avp="Destination-Realm" required="true" max="1"/>
 				<rule avp="Auth-Request-Type" required="true" max="1"/>
+				<rule avp="AF-Application-Identifier" required="false" max="1"/>
+				<rule avp="Reservation-Priority" required="false" max="1"/>
+				<rule avp="Rx-Request-Type" required="false" max="1"/>
+				<rule avp="MCPTT-Identifier" required="false" max="1"/>
+				<rule avp="Service-Info-Status" required="false" max="1"/>
+				<rule avp="Media-Component-Description" required="false"/>
 				<rule avp="Destination-Host" required="false" max="1"/>
 				<rule avp="NAS-Identifier" required="false" max="1"/>
 				<rule avp="NAS-IP-Address" required="true" max="1"/>
@@ -958,11 +964,24 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 		</avp>
 
 		<avp name="Reservation-Priority" code="458" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="UTF8String"/>
+			<data type="Enumerated">
+				<item code="0" name="DEFAULT"/>
+				<item code="1" name="PRIORITY-ONE"/>
+				<item code="2" name="PRIORITY-TWO"/>
+				<item code="3" name="PRIORITY-THREE"/>
+				<item code="4" name="PRIORITY-FOUR"/>
+				<item code="5" name="PRIORITY-FIVE"/>
+				<item code="6" name="PRIORITY-SIX"/>
+				<item code="7" name="PRIORITY-SEVEN"/>
+			</data>
 		</avp>
 
 		<avp name="Rx-Request-Type" code="533" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="UTF8String"/>
+			<data type="Enumerated">
+				<item code="0" name="INITIAL_REQUEST"/>
+				<item code="1" name="UPDATE_REQUEST"/>
+				<item code="2" name="PCSCF_RESTORATION"/>
+			</data>
 		</avp>
 
 		<avp name="MCPTT-Identifier" code="547" must="-" may="P" must-not="V" may-encrypt="-">
@@ -970,7 +989,44 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 		</avp>
 
 		<avp name="Service-Info-Status" code="527" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="UTF8String"/>
+			<data type="Enumerated">
+				<item code="0" name="PRELIM_SERVICE_INFORMATION"/>
+				<item code="1" name="FINAL_SERVICE_INFORMATION"/>
+			</data>
+		</avp>
+
+		<avp name="Media-Component-Description" code="517" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="Grouped">
+				<rule avp="Media-Component-Number" required="false" max="1"/>
+				<rule avp="Media-Sub-Component" required="false" />
+				<rule avp="AF-Application-Identifier" required="false" max="1"/>
+				<rule avp="Media-Type" required="false" max="1"/>
+				<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1"/>
+				<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1"/>
+				<rule avp="Max-Supported-Bandwidth-UL" required="false" max="1"/>
+				<rule avp="Max-Supported-Bandwidth-DL" required="false" max="1"/>
+				<rule avp="Min-Desired-Bandwidth-UL" required="false" max="1"/>
+				<rule avp="Min-Desired-Bandwidth-DL" required="false" max="1"/>
+				<rule avp="Min-Requested-Bandwidth-UL" required="false" max="1"/>
+				<rule avp="Min-Requested-Bandwidth-DL" required="false" max="1"/>
+				<rule avp="Extended-Max-Requested-BW-UL" required="false" max="1"/>
+				<rule avp="Extended-Max-Requested-BW-DL" required="false" max="1"/>
+				<rule avp="Extended-Max-Supported-BW-UL" required="false" max="1"/>
+				<rule avp="Extended-Max-Supported-BW-DL" required="false" max="1"/>
+				<rule avp="Extended-Min-Desired-BW-UL" required="false" max="1"/>
+				<rule avp="Extended-Min-Desired-BW-DL" required="false" max="1"/>
+				<rule avp="Extended-Min-Requested-BW-UL" required="false" max="1"/>
+				<rule avp="Extended-Min-Requested-BW-DL" required="false" max="1"/>
+				<rule avp="Flow-Status" required="false" max="1"/>
+				<rule avp="Priority-Sharing-Indicator" required="false" max="1"/>
+				<rule avp="Pre-emption-Capability" required="false" max="1"/>
+				<rule avp="Pre-emption-Vulnerability" required="false" max="1"/>
+				<rule avp="Reservation-Priority" required="false" max="1"/>
+				<rule avp="RS-Bandwidth" required="false" max="1"/>
+				<rule avp="RR-Bandwidth" required="false" max="1"/>
+				<rule avp="Codec-Data" required="false" max="2"/>
+				<rule avp="Content-Version" required="false" max="1"/>
+			</data>
 		</avp>
 
 		<avp name="Error-Message" code="281" must="-" may="P" must-not="V,M" may-encrypt="-">

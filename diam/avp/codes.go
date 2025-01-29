@@ -14,6 +14,7 @@ const (
 	RxRequestType       = 533
 	McpttIdentifier     = 547
 	ServiceInfoStatus   = 527
+	MediaCompDescp      = 517
 	//	Default
 	AccessNetworkChargingAddress               = 501
 	AccessNetworkChargingIdentifierGx          = 1022
