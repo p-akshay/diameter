@@ -12,7 +12,7 @@ const (
 	AFAppId             = 504
 	ReservationPriority = 458
 	RxRequestType       = 533
-	MpttIdentifier      = 547
+	McpttIdentifier     = 547
 	ServiceInfoStatus   = 527
 	//	Default
 	AccessNetworkChargingAddress               = 501

@@ -953,6 +953,26 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 			</data>
 		</avp>
 
+		<avp name="AF-Application-Identifier" code="504" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="Reservation-Priority" code="458" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="Rx-Request-Type" code="533" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="MCPTT-Identifier" code="547" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="Service-Info-Status" code="527" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
 		<avp name="Error-Message" code="281" must="-" may="P" must-not="V,M" may-encrypt="-">
 			<data type="UTF8String"/>
 		</avp>
