@@ -608,6 +608,131 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 			</answer>
 		</command>
 
+		<command code="265" short="AA" name="AA">
+			<request>
+				<!-- https://tools.ietf.org/html/rfc7155#section-3.1 -->
+				<rule avp="Session-Id" required="true" max="1"/>
+				<rule avp="Auth-Application-Id" required="true" max="1"/>
+				<rule avp="Origin-Host" required="true" max="1"/>
+				<rule avp="Origin-Realm" required="true" max="1"/>
+				<rule avp="Destination-Realm" required="true" max="1"/>
+				<rule avp="Auth-Request-Type" required="true" max="1"/>
+				<rule avp="Destination-Host" required="false" max="1"/>
+				<rule avp="NAS-Identifier" required="false" max="1"/>
+				<rule avp="NAS-IP-Address" required="true" max="1"/>
+				<rule avp="NAS-IPv6-Address" required="false" max="1"/>
+				<rule avp="NAS-Port" required="false" max="1"/>
+				<rule avp="NAS-Port-Id" required="false" max="1"/>
+				<rule avp="NAS-Port-Type" required="false" max="1"/>
+				<rule avp="Origin-AAA-Protocol" required="false" max="1"/>
+				<rule avp="Origin-State-Id" required="false" max="1"/>
+				<rule avp="Port-Limit" required="false" max="1"/>
+				<rule avp="User-Name" required="false" max="1"/>
+				<rule avp="User-Password" required="false" max="1"/>
+				<rule avp="Service-Type" required="false" max="1"/>
+				<rule avp="State" required="false" max="1"/>
+				<rule avp="Authorization-Lifetime" required="false" max="1"/>
+				<rule avp="Auth-Grace-Period" required="false" max="1"/>
+				<rule avp="Auth-Session-State" required="false" max="1"/>
+				<rule avp="Callback-Number" required="false" max="1"/>
+				<rule avp="Called-Station-Id" required="false" max="1"/>
+				<rule avp="Calling-Station-Id" required="false" max="1"/>
+				<rule avp="Originating-Line-Info" required="false" max="1"/>
+				<rule avp="Connect-Info" required="false" max="1"/>
+				<rule avp="CHAP-Auth" required="false" max="1"/>
+				<rule avp="CHAP-Challenge" required="false" max="1"/>
+				<rule avp="Framed-Compression" required="false"/>
+				<rule avp="Framed-Interface-Id" required="false" max="1"/>
+				<rule avp="Framed-IP-Address" required="false" max="1"/>
+				<rule avp="Framed-IPv6-Prefix" required="false"/>
+				<rule avp="Framed-IP-Netmask" required="false" max="1"/>
+				<rule avp="Framed-MTU" required="false" max="1"/>
+				<rule avp="Framed-Protocol" required="false" max="1"/>
+				<rule avp="ARAP-Password" required="false" max="1"/>
+				<rule avp="ARAP-Security" required="false" max="1"/>
+				<rule avp="ARAP-Security-Data" required="false"/>
+				<rule avp="Login-IP-Host" required="false"/>
+				<rule avp="Login-IPv6-Host" required="false"/>
+				<rule avp="Login-LAT-Group" required="false" max="1"/>
+				<rule avp="Login-LAT-Node" required="false" max="1"/>
+				<rule avp="Login-LAT-Port" required="false" max="1"/>
+				<rule avp="Login-LAT-Service" required="false" max="1"/>
+				<rule avp="Tunneling" required="false"/>
+				<rule avp="Proxy-Info" required="false"/>
+				<rule avp="Route-Record" required="false"/>
+			</request>
+			<answer>
+				<!-- http://tools.ietf.org/html/rfc7155#section-3.2 -->
+				<rule avp="Session-Id" required="true" max="1"/>
+				<rule avp="Auth-Application-Id" required="true" max="1"/>
+				<rule avp="Auth-Request-Type" required="true" max="1"/>
+				<rule avp="Result-Code" required="true" max="1"/>
+				<rule avp="Origin-Host" required="true" max="1"/>
+				<rule avp="Origin-Realm" required="true" max="1"/>
+				<rule avp="User-Name" required="false" max="1"/>
+				<rule avp="Service-Type" required="false" max="1"/>
+				<rule avp="Class" required="false"/>
+				<rule avp="Configuration-Token" required="false"/>
+				<rule avp="Acct-Interim-Interval" required="false" max="1"/>
+				<rule avp="Error-Message" required="false" max="1"/>
+				<rule avp="Error-Reporting-Host" required="false" max="1"/>
+				<rule avp="Failed-AVP" required="false"/>
+				<rule avp="Idle-Timeout" required="false" max="1"/>
+				<rule avp="Authorization-Lifetime" required="false" max="1"/>
+				<rule avp="Auth-Grace-Period" required="false" max="1"/>
+				<rule avp="Auth-Session-State" required="false" max="1"/>
+				<rule avp="Re-Auth-Request-Type" required="false" max="1"/>
+				<rule avp="Multi-Round-Time-Out" required="false" max="1"/>
+				<rule avp="Session-Timeout" required="false" max="1"/>
+				<rule avp="State" required="false" max="1"/>
+				<rule avp="Reply-Message" required="false"/>
+				<rule avp="Origin-AAA-Protocol" required="false" max="1"/>
+				<rule avp="Origin-State-Id" required="false" max="1"/>
+				<rule avp="Filter-Id" required="false"/>
+				<rule avp="Password-Retry" required="false" max="1"/>
+				<rule avp="Port-Limit" required="false" max="1"/>
+				<rule avp="Prompt" required="false" max="1"/>
+				<rule avp="ARAP-Challenge-Response" required="false" max="1"/>
+				<rule avp="ARAP-Features" required="false" max="1"/>
+				<rule avp="ARAP-Security" required="false" max="1"/>
+				<rule avp="ARAP-Security-Data" required="false"/>
+				<rule avp="ARAP-Zone-Access" required="false" max="1"/>
+				<rule avp="Callback-Id" required="false" max="1"/>
+				<rule avp="Callback-Number" required="false" max="1"/>
+				<rule avp="Framed-Appletalk-Link" required="false" max="1"/>
+				<rule avp="Framed-Appletalk-Network" required="false"/>
+				<rule avp="Framed-Appletalk-Zone" required="false" max="1"/>
+				<rule avp="Framed-Compression" required="false"/>
+				<rule avp="Framed-Interface-Id" required="false" max="1"/>
+				<rule avp="Framed-IP-Address" required="false" max="1"/>
+				<rule avp="Framed-IPv6-Prefix" required="false"/>
+				<rule avp="Framed-IPv6-Pool" required="false" max="1"/>
+				<rule avp="Framed-IPv6-Route" required="false"/>
+				<rule avp="Framed-IP-Netmask" required="false" max="1"/>
+				<rule avp="Framed-Route" required="false"/>
+				<rule avp="Framed-Pool" required="false" max="1"/>
+				<rule avp="Framed-IPX-Network" required="false" max="1"/>
+				<rule avp="Framed-MTU" required="false" max="1"/>
+				<rule avp="Framed-Protocol" required="false" max="1"/>
+				<rule avp="Framed-Routing" required="false" max="1"/>
+				<rule avp="Login-IP-Host" required="false"/>
+				<rule avp="Login-IPv6-Host" required="false"/>
+				<rule avp="Login-LAT-Group" required="false" max="1"/>
+				<rule avp="Login-LAT-Node" required="false" max="1"/>
+				<rule avp="Login-LAT-Port" required="false" max="1"/>
+				<rule avp="Login-LAT-Service" required="false" max="1"/>
+				<rule avp="Login-Service" required="false" max="1"/>
+				<rule avp="Login-TCP-Port" required="false" max="1"/>
+				<rule avp="NAS-Filter-Rule" required="false"/>
+				<rule avp="QoS-Filter-Rule" required="false"/>
+				<rule avp="Tunneling" required="false"/>
+				<rule avp="Redirect-Host" required="false"/>
+				<rule avp="Redirect-Host-Usage" required="false" max="1"/>
+				<rule avp="Redirect-Max-Cache-Time" required="false" max="1"/>
+				<rule avp="Proxy-Info" required="false"/>
+			</answer>
+		</command>
+
 		<command code="258" short="RA" name="Re-Auth">
 			<request>
 				<rule avp="Session-Id" required="true" max="1"/>
@@ -635,52 +760,6 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 				<rule avp="Redirect-Host" required="false"/>
 				<rule avp="Redirect-Host-Usage" required="false" max="1"/>
 				<rule avp="Redirect-Max-Cache-Time" required="false" max="1"/>
-				<rule avp="Proxy-Info" required="false"/>
-			</answer>
-		</command>
-
-		<command code="271" short="AC" name="Accounting">
-			<request>
-				<rule avp="Session-Id" required="true" max="1"/>
-				<rule avp="Origin-Host" required="true" max="1"/>
-				<rule avp="Origin-Realm" required="true" max="1"/>
-				<rule avp="Destination-Realm" required="true" max="1"/>
-				<rule avp="Accounting-Record-Type" required="true" max="1"/>
-				<rule avp="Accounting-Record-Number" required="true" max="1"/>
-				<rule avp="Acct-Application-Id" required="false" max="1"/>
-				<rule avp="Vendor-Specific-Application-Id" required="false" max="1"/>
-				<rule avp="User-Name" required="false" max="1"/>
-				<rule avp="Destination-Host" required="false" max="1"/>
-				<rule avp="Accounting-Sub-Session-Id" required="false" max="1"/>
-				<rule avp="Acct-Session-Id" required="false" max="1"/>
-				<rule avp="Acct-Multi-Session-Id" required="false" max="1"/>
-				<rule avp="Acct-Interim-Interval" required="false" max="1"/>
-				<rule avp="Accounting-Realtime-Required" required="false" max="1"/>
-				<rule avp="Origin-State-Id" required="false" max="1"/>
-				<rule avp="Event-Timestamp" required="false" max="1"/>
-				<rule avp="Proxy-Info" required="false"/>
-				<rule avp="Route-Record" required="false"/>
-			</request>
-			<answer>
-				<rule avp="Session-Id" required="true" max="1"/>
-				<rule avp="Result-Code" required="true" max="1"/>
-				<rule avp="Origin-Host" required="true" max="1"/>
-				<rule avp="Origin-Realm" required="true" max="1"/>
-				<rule avp="Accounting-Record-Type" required="true" max="1"/>
-				<rule avp="Accounting-Record-Number" required="true" max="1"/>
-				<rule avp="Acct-Application-Id" required="false" max="1"/>
-				<rule avp="Vendor-Specific-Application-Id" required="false" max="1"/>
-				<rule avp="User-Name" required="false" max="1"/>
-				<rule avp="Accounting-Sub-Session-Id" required="false" max="1"/>
-				<rule avp="Acct-Session-Id" required="false" max="1"/>
-				<rule avp="Acct-Multi-Session-Id" required="false" max="1"/>
-				<rule avp="Error-Message" required="false" max="1"/>
-				<rule avp="Error-Reporting-Host" required="false" max="1"/>
-				<rule avp="Failed-AVP" required="false" max="1"/>
-				<rule avp="Acct-Interim-Interval" required="false" max="1"/>
-				<rule avp="Accounting-Realtime-Required" required="false" max="1"/>
-				<rule avp="Origin-State-Id" required="false" max="1"/>
-				<rule avp="Event-Timestamp" required="false" max="1"/>
 				<rule avp="Proxy-Info" required="false"/>
 			</answer>
 		</command>
