@@ -8,6 +8,13 @@ package avp
 
 // Diameter AVP types.
 const (
+	//	3GPP Rx Specific AVPs
+	AFAppId             = 504
+	ReservationPriority = 458
+	RxRequestType       = 533
+	MpttIdentifier      = 547
+	ServiceInfoStatus   = 527
+	//	Default
 	AccessNetworkChargingAddress               = 501
 	AccessNetworkChargingIdentifierGx          = 1022
 	AccessNetworkChargingIdentifierValue       = 503
