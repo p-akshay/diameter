@@ -136,6 +136,7 @@ func init() {
 	var dictionaries = []struct{ name, xml string }{
 		{"Base", baseXML},
 		{"Rx", rxXML},
+		{"MB2C", mb2cXML},
 		{"Credit Control", creditcontrolXML},
 		{"Gx Charging Control", gxcreditcontrolXML},
 		{"Network Access Server", networkaccessserverXML},
