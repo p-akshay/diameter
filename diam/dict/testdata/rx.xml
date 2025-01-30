@@ -423,6 +423,10 @@
 				<item code="1" name="FINAL_SERVICE_INFORMATION"/>
 			</data>
 		</avp>
+		
+		<avp name="Framed-IP-Address" code="8" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="OctetString"/>
+		</avp>
 
 		<avp name="Media-Component-Description" code="517" must="-" may="P" must-not="V" may-encrypt="-">
 			<data type="Grouped">

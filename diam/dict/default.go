@@ -1029,6 +1029,14 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 			</data>
 		</avp>
 
+		<avp name="Content-Version" code="552" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned64"/>
+		</avp>
+
+		<avp name="Codec-Data" code="524" must="-" may="P" must-not="V" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
 		<avp name="Error-Message" code="281" must="-" may="P" must-not="V,M" may-encrypt="-">
 			<data type="UTF8String"/>
 		</avp>
