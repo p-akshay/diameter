@@ -1221,8 +1221,7 @@ var rxXML = `<?xml version="1.0" encoding="UTF-8"?>
 
 var mb2cXML = `<?xml version="1.0" encoding="UTF-8"?>
 <diameter>
-
-	<application id="16777235" type="auth" name="MB2C"> 
+	<application id="16777335" type="auth" name="MB2C"> 
 	<!-- Diameter Common Messages -->
 
 		<command code="257" short="CE" name="Capabilities-Exchange">
