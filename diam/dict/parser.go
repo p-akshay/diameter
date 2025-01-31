@@ -127,16 +127,13 @@ func (p *Parser) Load(r io.Reader) error {
 			}
 		}
 	}
-	fmt.Printf("%+v\n", p.command)
-	fmt.Printf("%+v\n", p.appcode)
-	fmt.Printf("%+v\n", p.apptype)
 	return nil
 }
 
 func updateType(a *AVP) error {
 	id, exists := datatype.Available[a.Data.TypeName]
 	if !exists {
-		return fmt.Errorf("Unsupported data type: %s", a.Data.TypeName)
+		return fmt.Errorf("unsupported data type: %s", a.Data.TypeName)
 	}
 	a.Data.Type = id
 	return nil
