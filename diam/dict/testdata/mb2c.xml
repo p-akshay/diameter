@@ -36,7 +36,7 @@
 			</answer>
 		</command>
 
-		<command code="8388662" short="GCSA" name="GCSA">
+		<command code="8388662" short="GA" name="GCS-Action">
 			<request>
 				<rule avp="Session-Id" required="true" max="1"/>
 				<rule avp="DRMP" required="false" max="1"/>
@@ -80,7 +80,7 @@
 			</answer>
 		</command>
 
-		<command code="8388663" short="GCSN" name="GCSN">
+		<command code="8388663" short="GN" name="GCS-Notification">
 			<request>
 				<rule avp="Session-Id" required="true" max="1"/>
 				<rule avp="DRMP" required="false" max="1"/>
