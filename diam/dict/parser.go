@@ -97,7 +97,7 @@ func (p *Parser) Load(r io.Reader) error {
 	if err := d.Decode(f); err != nil {
 		return err
 	}
-	fmt.Printf("%+v\n", f)
+
 	p.file = append(p.file, f)
 	for _, app := range f.App {
 		// Cache supported applications by ID.
@@ -127,6 +127,9 @@ func (p *Parser) Load(r io.Reader) error {
 			}
 		}
 	}
+	fmt.Printf("%+v\n", p.command)
+	fmt.Printf("%+v\n", p.appcode)
+	fmt.Printf("%+v\n", p.apptype)
 	return nil
 }
 
