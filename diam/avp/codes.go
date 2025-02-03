@@ -25,6 +25,11 @@ const (
 	FlowUsage            = 512
 	AFSignallingProtocol = 529
 
+	//	MB2-C
+	TMGIAllocationRequest   = 3509
+	TMGIDeallocationRequest = 3512
+	TMGINumber              = 3516
+
 	//	Default
 	AccessNetworkChargingAddress               = 501
 	AccessNetworkChargingIdentifierGx          = 1022
