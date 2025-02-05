@@ -179,181 +179,6 @@
 			</answer>
 		</command>
 
-		<avp name="Auth-Application-Id" code="258" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Auth-Request-Type" code="274" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="1" name="AUTHENTICATE_ONLY"/>
-				<item code="2" name="AUTHORIZE_ONLY"/>
-				<item code="3" name="AUTHORIZE_AUTHENTICATE"/>
-			</data>
-		</avp>
-
-		<avp name="Authorization-Lifetime" code="291" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Auth-Grace-Period" code="276" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Auth-Session-State" code="277" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="STATE_MAINTAINED"/>
-				<item code="1" name="NO_STATE_MAINTAINED"/>
-			</data>
-		</avp>
-
-		<avp name="Re-Auth-Request-Type" code="285" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="AUTHORIZE_ONLY"/>
-				<item code="1" name="AUTHORIZE_AUTHENTICATE"/>
-			</data>
-		</avp>
-
-		<avp name="Class" code="25" must="M" may="P" must-not="V" may-encrypt="Y">
-			<data type="OctetString"/>
-		</avp>
-
-		<avp name="Destination-Host" code="293" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="DiameterIdentity"/>
-		</avp>
-
-		<avp name="Destination-Realm" code="283" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="DiameterIdentity"/>
-		</avp>
-
-		<avp name="Disconnect-Cause" code="273" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="REBOOTING"/>
-				<item code="1" name="BUSY"/>
-				<item code="2" name="DO_NOT_WANT_TO_TALK_TO_YOU"/>
-			</data>
-		</avp>
-
-		<avp name="AF-Application-Identifier" code="504" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="UTF8String"/>
-		</avp>
-
-		<avp name="Reservation-Priority" code="458" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="DEFAULT"/>
-				<item code="1" name="PRIORITY-ONE"/>
-				<item code="2" name="PRIORITY-TWO"/>
-				<item code="3" name="PRIORITY-THREE"/>
-				<item code="4" name="PRIORITY-FOUR"/>
-				<item code="5" name="PRIORITY-FIVE"/>
-				<item code="6" name="PRIORITY-SIX"/>
-				<item code="7" name="PRIORITY-SEVEN"/>
-			</data>
-		</avp>
-
-		<avp name="Rx-Request-Type" code="533" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="INITIAL_REQUEST"/>
-				<item code="1" name="UPDATE_REQUEST"/>
-				<item code="2" name="PCSCF_RESTORATION"/>
-			</data>
-		</avp>
-
-		<avp name="MCPTT-Identifier" code="547" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="UTF8String"/>
-		</avp>
-
-		<avp name="Service-Info-Status" code="527" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="PRELIM_SERVICE_INFORMATION"/>
-				<item code="1" name="FINAL_SERVICE_INFORMATION"/>
-			</data>
-		</avp>
-
-		<avp name="Media-Component-Description" code="517" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="Grouped">
-				<rule avp="Media-Component-Number" required="false" max="1"/>
-				<rule avp="Media-Sub-Component" required="false" />
-				<rule avp="AF-Application-Identifier" required="false" max="1"/>
-				<rule avp="Media-Type" required="false" max="1"/>
-				<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1"/>
-				<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1"/>
-				<rule avp="Max-Supported-Bandwidth-UL" required="false" max="1"/>
-				<rule avp="Max-Supported-Bandwidth-DL" required="false" max="1"/>
-				<rule avp="Min-Desired-Bandwidth-UL" required="false" max="1"/>
-				<rule avp="Min-Desired-Bandwidth-DL" required="false" max="1"/>
-				<rule avp="Min-Requested-Bandwidth-UL" required="false" max="1"/>
-				<rule avp="Min-Requested-Bandwidth-DL" required="false" max="1"/>
-				<rule avp="Extended-Max-Requested-BW-UL" required="false" max="1"/>
-				<rule avp="Extended-Max-Requested-BW-DL" required="false" max="1"/>
-				<rule avp="Extended-Max-Supported-BW-UL" required="false" max="1"/>
-				<rule avp="Extended-Max-Supported-BW-DL" required="false" max="1"/>
-				<rule avp="Extended-Min-Desired-BW-UL" required="false" max="1"/>
-				<rule avp="Extended-Min-Desired-BW-DL" required="false" max="1"/>
-				<rule avp="Extended-Min-Requested-BW-UL" required="false" max="1"/>
-				<rule avp="Extended-Min-Requested-BW-DL" required="false" max="1"/>
-				<rule avp="Flow-Status" required="false" max="1"/>
-				<rule avp="Priority-Sharing-Indicator" required="false" max="1"/>
-				<rule avp="Pre-emption-Capability" required="false" max="1"/>
-				<rule avp="Pre-emption-Vulnerability" required="false" max="1"/>
-				<rule avp="Reservation-Priority" required="false" max="1"/>
-				<rule avp="RS-Bandwidth" required="false" max="1"/>
-				<rule avp="RR-Bandwidth" required="false" max="1"/>
-				<rule avp="Codec-Data" required="false" max="2"/>
-				<rule avp="Content-Version" required="false" max="1"/>
-			</data>
-		</avp>
-
-		<avp name="Content-Version" code="552" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned64"/>
-		</avp>
-
-		<avp name="Codec-Data" code="524" must="-" may="P" must-not="V" may-encrypt="-">
-			<data type="UTF8String"/>
-		</avp>
-
-		<avp name="Error-Message" code="281" must="-" may="P" must-not="V,M" may-encrypt="-">
-			<data type="UTF8String"/>
-		</avp>
-
-		<avp name="Error-Reporting-Host" code="294" must="-" may="P" must-not="V,M" may-encrypt="-">
-			<data type="DiameterIdentity"/>
-		</avp>
-
-		<avp name="Event-Timestamp" code="55" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Time"/>
-		</avp>
-
-		<avp name="Experimental-Result" code="297" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Grouped">
-				<rule avp="Vendor-Id" required="true" max="1"/>
-				<rule avp="Experimental-Result-Code" required="true" max="1"/>
-			</data>
-		</avp>
-
-		<avp name="Experimental-Result-Code" code="298" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Failed-AVP" code="279" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Grouped"/>
-		</avp>
-
-		<avp name="Firmware-Revision" code="267" must="-" may="-" must-not="P,V,M" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Host-IP-Address" code="257" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Address"/>
-		</avp>
-
-		<avp name="Inband-Security-Id" code="299" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Multi-Round-Time-Out" code="272" must="M" may="P" must-not="V" may-encrypt="Y">
-			<data type="Unsigned32"/>
-		</avp>
-
 		<avp name="Origin-Host" code="264" must="M" may="P" must-not="V" may-encrypt="-">
 			<data type="DiameterIdentity"/>
 		</avp>
@@ -361,13 +186,93 @@
 		<avp name="Origin-Realm" code="296" must="M" may="P" must-not="V" may-encrypt="-">
 			<data type="DiameterIdentity"/>
 		</avp>
+		
+		<avp name="Host-IP-Address" code="257" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Address"/>
+		</avp>
 
-		<avp name="Origin-State-Id" code="278" must="M" may="P" must-not="V" may-encrypt="-">
+		<avp name="Vendor-Id" code="266" must="M" may="P" must-not="V" may-encrypt="-">
 			<data type="Unsigned32"/>
 		</avp>
 
 		<avp name="Product-Name" code="269" must="-" may="-" must-not="P,V,M" may-encrypt="-">
 			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="Origin-State-Id" code="278" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Supported-Vendor-Id" code="265" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Auth-Application-Id" code="258" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Inband-Security-Id" code="299" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Acct-Application-Id" code="259" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Vendor-Specific-Application-Id" code="260" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Grouped">
+				<rule avp="Vendor-Id" required="false" max="1"/>
+				<rule avp="Auth-Application-Id" required="true" max="1"/>
+				<rule avp="Acct-Application-Id" required="true" max="1"/>
+			</data>
+		</avp>
+
+		<avp name="Firmware-Revision" code="267" must="-" may="-" must-not="P,V,M" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Result-Code" code="268" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Error-Message" code="281" must="-" may="P" must-not="V,M" may-encrypt="-">
+			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="Failed-AVP" code="279" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Grouped"/>
+		</avp>
+
+		<avp name="Session-Id" code="263" must="M" may="P" must-not="V" may-encrypt="Y">
+			<data type="UTF8String"/>
+		</avp>
+
+		<avp name="DRMP" code="301" must="-" may="P" must-not="V,M" may-encrypt="-">
+			<data type="Enumerated">
+				<item code="0" name="PRIORITY_0"/>
+				<item code="1" name="PRIORITY_1"/>
+				<item code="2" name="PRIORITY_2"/>
+				<item code="3" name="PRIORITY_3"/>
+				<item code="4" name="PRIORITY_4"/>
+				<item code="5" name="PRIORITY_5"/>
+				<item code="6" name="PRIORITY_6"/>
+				<item code="7" name="PRIORITY_7"/>
+				<item code="8" name="PRIORITY_8"/>
+				<item code="9" name="PRIORITY_9"/>
+				<item code="10" name="PRIORITY_10"/>
+				<item code="11" name="PRIORITY_11"/>
+				<item code="12" name="PRIORITY_12"/>
+				<item code="13" name="PRIORITY_13"/>
+				<item code="14" name="PRIORITY_14"/>
+				<item code="15" name="PRIORITY_15"/>
+			</data>
+		</avp>
+
+		<avp name="Auth-Session-State" code="277" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="Enumerated">
+				<item code="0" name="STATE_MAINTAINED"/>
+				<item code="1" name="NO_STATE_MAINTAINED"/>
+			</data>
 		</avp>
 
 		<avp name="Proxy-Host" code="280" must="M" may="-" must-not="P,V" may-encrypt="-">
@@ -385,33 +290,52 @@
 			<data type="OctetString"/>
 		</avp>
 
-		<avp name="Redirect-Host" code="292" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="DiameterURI"/>
-		</avp>
-
-		<avp name="Redirect-Host-Usage" code="261" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Enumerated">
-				<item code="0" name="DONT_CACHE"/>
-				<item code="1" name="ALL_SESSION"/>
-				<item code="2" name="ALL_REALM"/>
-				<item code="3" name="REALM_AND_APPLICATION"/>
-				<item code="4" name="ALL_APPLICATION"/>
-				<item code="5" name="ALL_HOST"/>
-				<item code="6" name="ALL_USER"/>
-			</data>
-		</avp>
-
-		<avp name="Redirect-Max-Cache-Time" code="262" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Result-Code" code="268" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
 		<avp name="Route-Record" code="282" must="M" may="-" must-not="P,V" may-encrypt="-">
 			<data type="DiameterIdentity"/>
 		</avp>
+
+		<avp name="Supported-Features" code="628" vendor-id="10415" must="V" may="M" may-encrypt="N">
+			<data type="Grouped">
+				<rule avp="Vendor-Id" required="true" max="1"/>
+				<rule avp="Feature-List-ID" required="true" max="1"/>
+				<rule avp="Feature-List" required="true" max="1"/>
+			</data>
+		</avp>
+
+		<avp name="Feature-List-ID" code="629" must="V" must_not="M" may-encrypt="N" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Feature-List" code="630" must="V" must-not="M" may-encrypt="N" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="TMGI-Allocation-Request" code="3509" vendor-id="10415" must="V" may="M" may-encrypt="N">
+			<data type="Grouped">
+				<rule avp="TMGI-Number" required="true" max="1"/>
+				<rule avp="TMGI" required="false" max=""/>
+			</data>
+		</avp>
+
+		<avp name="TMGI-Number" code="3516" must="V" must_not="M" may-encrypt="N" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="TMGI" code="900" must="V" must-not="M" may-encrypt="N" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
+
+		<avp name="TMGI-Deallocation-Request" code="3512" vendor-id="10415" must="V" may="M" may-encrypt="N">
+			<data type="Grouped">
+				<rule avp="TMGI" required="false" max=""/>
+			</data>
+		</avp>
+
+		<avp name="Restart-Counter" code="932" vendor-id="10415" must="M" may="P" must-not="V" may-encrypt="-">
+			<data type="OctetString"/>
+		</avp>
+		
+		
 
 		<avp name="Session-Id" code="263" must="M" may="P" must-not="V" may-encrypt="Y">
 			<data type="UTF8String"/>
@@ -454,80 +378,6 @@
 		<avp name="User-Name" code="1" must="M" may="P" must-not="V" may-encrypt="Y">
 			<data type="UTF8String"/>
 		</avp>
-
-		<avp name="Vendor-Id" code="266" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="Vendor-Specific-Application-Id" code="260" must="M" may="P" must-not="V" may-encrypt="-">
-			<data type="Grouped">
-				<rule avp="Vendor-Id" required="false" max="1"/>
-				<rule avp="Auth-Application-Id" required="true" max="1"/>
-				<rule avp="Acct-Application-Id" required="true" max="1"/>
-			</data>
-		</avp>
-
-		<!-- IETF RFC 7683 - https://tools.ietf.org/html/rfc7683 -->
-		<avp name="OC-Supported-Features" code="621" must-not="V">
-			<data type="Grouped">
-				<rule avp="OC-Feature-Vector" required="false"/>
-				<rule avp="AVP" required="false"/>
-			</data>
-		</avp>
-
-		<avp name="OC-Feature-Vector" code="622" must-not="V">
-			<data type="Unsigned64"/>
-		</avp>
-
-		<avp name="OC-OLR" code="623" must-not="V">
-			<data type="Grouped">
-				<rule avp="OC-Sequence-Number" required="true" max="1"/>
-				<rule avp="OC-Report-Type" required="true" max="1"/>
-				<rule avp="OC-Reduction-Percentage" required="false" max="1"/>
-				<rule avp="OC-Validity-Duration" required="false" max="1"/>
-				<rule avp="AVP" required="false"/>
-			</data>
-		</avp>
-
-		<avp name="OC-Sequence-Number" code="624" must-not="V">
-			<data type="Unsigned64"/>
-		</avp>
-
-		<avp name="OC-Validity-Duration" code="625" must-not="V">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<avp name="OC-Report-Type" code="626" must-not="V">
-			<data type="Enumerated">
-				<item code="0" name="HOST_REPORT"/>
-				<item code="1" name="REALM_REPORT"/>
-			</data>
-		</avp>
-
-		<avp name="OC-Reduction-Percentage" code="627" must-not="V">
-			<data type="Unsigned32"/>
-		</avp>
-
-		<!-- IETF RFC 7944 - https://tools.ietf.org/html/rfc7944 -->
-		<avp name="DRMP" code="301" must-not="V">
-			<data type="Enumerated">
-				<item code="0" name="PRIORITY_0"/>
-				<item code="1" name="PRIORITY_1"/>
-				<item code="2" name="PRIORITY_2"/>
-				<item code="3" name="PRIORITY_3"/>
-				<item code="4" name="PRIORITY_4"/>
-				<item code="5" name="PRIORITY_5"/>
-				<item code="6" name="PRIORITY_6"/>
-				<item code="7" name="PRIORITY_7"/>
-				<item code="8" name="PRIORITY_8"/>
-				<item code="9" name="PRIORITY_9"/>
-				<item code="10" name="PRIORITY_10"/>
-				<item code="11" name="PRIORITY_11"/>
-				<item code="12" name="PRIORITY_12"/>
-				<item code="13" name="PRIORITY_13"/>
-				<item code="14" name="PRIORITY_14"/>
-				<item code="15" name="PRIORITY_15"/>
-			</data>
-		</avp>
+		
 	</application>
 </diameter>
