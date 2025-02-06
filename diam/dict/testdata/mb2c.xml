@@ -334,8 +334,293 @@
 		<avp name="Restart-Counter" code="932" vendor-id="10415" must="M" may="P" must-not="V" may-encrypt="-">
 			<data type="OctetString"/>
 		</avp>
+
+		<avp name="MBMS-Bearer-Request" code="3504" vendor-id="10415" must="M" may="P" must-not="P,V" may-encrypt="-">
+			<data type="Grouped">
+				<rule avp="MBMS-StartStop-Indication" required="true" max="1"/>
+				<rule avp="TMGI" required="false" max="1"/>
+				<rule avp="MBMS-Flow-Identifier" required="false" max="1"/>
+				<rule avp="QoS-Information" required="false" max="1"/>
+				<rule avp="MBMS-Service-Area" required="false" max="1"/>
+				<rule avp="MBMS-Start-Time" required="false" max="1"/>
+				<rule avp="MB2U-Security" required="false" max="1"/>
+				<rule avp="MBMS-Cell-List" required="false" max="1"/>
+				<rule avp="Local-M1-Information" required="false" max="1"/>
+				<rule avp="Local-MB2-U-Information" required="false" max="1"/>
+				<rule avp="FEC-Request" required="false" max="1"/>
+				<rule avp="ROHC-Request" required="false" max=""/>
+			</data>	
+		</avp>
+
+		<avp name="MBMS-StartStop-Indication" code="902" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="Y">
+			<data type="Enumerated">
+				<item code="0" name="START"/>
+				<item code="1" name="STOP"/>
+				<item code="2" name="UPDATE"/>
+				<item code="3" name="HEARTBEAT"/>
+			</data>
+		</avp>
 		
+		<avp name="MBMS-Flow-Identifier" code="920" must="M,V" must-not="" may-encrypt="Y" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
 		
+		<avp name="QoS-Information" code="1016" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="Y">
+			<data type="Grouped">
+				<rule avp="QoS-Class-Identifier" required="false" max="1"/>
+				<rule avp="Max-Requested-Bandwidth-UL" required="false" max="1"/>
+				<rule avp="Max-Requested-Bandwidth-DL" required="false" max="1"/>
+				<rule avp="Extended-Max-Requested-Bandwidth-UL" required="false" max="1"/>
+				<rule avp="Extended-Max-Requested-Bandwidth-DL" required="false" max="1"/>
+				<rule avp="Guaranteed-Bitrate-UL" required="false" max="1"/>
+				<rule avp="Guaranteed-Bitrate-DL" required="false" max="1"/>
+				<rule avp="Extended-GBR-UL" required="false" max="1"/>
+				<rule avp="Extended-GBR-DL" required="false" max="1"/>
+				<rule avp="Bearer-Identifier" required="false" max="1"/>
+				<rule avp="Allocation-Retention-Priority" required="false" max="1"/>
+				<rule avp="APN-Aggregate-Max-Bitrate-UL" required="false" max="1"/>
+				<rule avp="APN-Aggregate-Max-Bitrate-DL" required="false" max="1"/>
+				<rule avp="Extended-APN-AMBR-UL" required="false" max="1"/>
+				<rule avp="Extended-APN-AMBR-DL" required="false" max="1"/>
+				<rule avp="Conditional-APN-Aggregate-Max-Bitrate" required="false" max=""/>
+			</data>
+		</avp>
+
+		<avp name="QoS-Class-Identifier" code="1028" must="V,M"	may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="Enumerated">
+				<item code="1" name="QCI_1"/>
+				<item code="2" name="QCI_2"/>
+				<item code="3" name="QCI_3"/>
+				<item code="4" name="QCI_4"/>
+				<item code="5" name="QCI_5"/>
+				<item code="6" name="QCI_6"/>
+				<item code="7" name="QCI_7"/>
+				<item code="8" name="QCI_8"/>
+				<item code="9" name="QCI_9"/>
+				<item code="65" name="QCI_65"/>
+				<item code="66" name="QCI_66"/>
+				<item code="67" name="QCI_67"/>
+				<item code="69" name="QCI_69"/>
+				<item code="70" name="QCI_70"/>
+				<item code="66" name="QCI_71"/>
+				<item code="66" name="QCI_72"/>
+				<item code="66" name="QCI_73"/>
+				<item code="66" name="QCI_74"/>
+				<item code="75" name="QCI_75"/>
+				<item code="66" name="QCI_76"/>
+				<item code="79" name="QCI_79"/>
+				<item code="66" name="QCI_80"/>
+				<item code="66" name="QCI_82"/>
+				<item code="66" name="QCI_83"/>
+				<item code="66" name="QCI_84"/>
+				<item code="66" name="QCI_85"/>
+			</data>
+		</avp>
+
+		<avp name="Max-Requested-Bandwidth-DL" code="515" must="M,V" may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Max-Requested-Bandwidth-UL" code="516" must="M,V" may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Extended-Max-Requested-BW-DL" code="554" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Extended-Max-Requested-BW-UL" code="555" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Guaranteed-Bitrate-DL" code="1025" must="M,V" may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Guaranteed-Bitrate-UL" code="1026" must="M,V" may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Extended-GBR-DL" code="2850" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Extended-GBR-UL" code="2851" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Bearer-Identifier" code="1020" must="M,V" may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
+
+		<avp name="Allocation-Retention-Priority" code="1034" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Grouped">
+				<rule avp="Priority-Level" required="true" max="1"/>
+				<rule avp="Pre-emption-Capability" required="false" max="1"/>
+				<rule avp="Pre-emption-Vulnerability" required="false" max="1"/>
+			</data>
+		</avp>
+
+		<avp name="Priority-Level" code="1046" must="V"	may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Pre-emption-Capability" code="1047" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Enumerated">
+				<item code="0" name="PRE-EMPTION_CAPABILITY_ENABLED"/>
+				<item code="1" name="PRE-EMPTION_CAPABILITY_DISABLED"/>
+			</data>
+		</avp>
+
+		<avp name="Pre-emption-Vulnerability" code="1048" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Enumerated">
+				<item code="0" name="PRE-EMPTION_VULNERABILITY_ENABLED"/>
+				<item code="1" name="PRE-EMPTION_VULNERABILITY_DISABLED"/>
+			</data>
+		</avp>
+
+		<avp name="APN-Aggregate-Max-Bitrate-UL" code="1041" must="V" must-not="M" may-encrypt="Y" vendor-id="10415">
+      		<data type="Unsigned32"/>
+    	</avp>
+
+		<avp name="APN-Aggregate-Max-Bitrate-DL" code="1040" must="V" must-not="M" may-encrypt="Y" vendor-id="10415">
+      		<data type="Unsigned32"/>
+    	</avp>
+
+		<avp name="Extended-APN-AMBR-DL" code="2848" must="V" must-not="M" may= "P" may-encrypt="Y" vendor-id="10415">
+      		<data type="Unsigned32"/>
+    	</avp>
+
+    	<avp name="Extended-APN-AMBR-UL" code="2849" must="V" must-not="M" may="P" may-encrypt="Y" vendor-id="10415">
+      		<data type="Unsigned32"/>
+    	</avp>
+
+		<avp name="Conditional-APN-Aggregate-Max-Bitrate" code="2818" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Grouped">
+				<rule avp="APN-Aggregate-Max-Bitrate-UL" required="false" max="1"/>
+				<rule avp="APN-Aggregate-Max-Bitrate-DL" required="false" max="1"/>
+				<rule avp="Extended-APN-AMBR-UL" required="false" max="1"/>
+				<rule avp="Extended-APN-AMBR-DL" required="false" max="1"/>
+				<rule avp="IP-CAN-Type" required="false" max=""/>
+				<rule avp="RAT-Type" required="false" max=""/>
+ 			</data>
+		</avp>
+
+		<avp name="IP-CAN-Type" code="1027" must="M,V" map="P" may-encrypt="Y" vendor-id="10415">
+            <data type="Enumerated">
+                <item code="0" name="3GPP-GPRS"/>
+                <item code="1" name="DOCSIS"/>
+                <item code="2" name="xDSL"/>
+                <item code="3" name="WiMAX"/>
+                <item code="4" name="3GPP2"/>
+                <item code="5" name="3GPP-EPS"/>
+                <item code="6" name="Non-3GPP-EPS"/>
+                <item code="7" name="FBA"/>
+                <item code="8" name="3GPP-5GS"/>
+                <item code="9" name="Non-3GPP-5GS"/>
+            </data>
+        </avp>
+
+		<avp name="RAT-Type" code="1032" must="V"	may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="Enumerated">
+				<item code="0" name="WLAN"/>
+				<item code="1" name="VIRTUAL"/>
+				<item code="1000" name="UTRAN"/>
+				<item code="1001" name="GERAN"/>
+				<item code="1002" name="GAN"/>
+				<item code="1003" name="HSPA_EVOLUTION"/>
+				<item code="1004" name="EUTRAN"/>
+				<item code="2000" name="CDMA2000_1X"/>
+				<item code="2001" name="HRPD"/>
+				<item code="2002" name="UMB"/>
+				<item code="2003" name="EHRPD"/>
+			</data>
+		</avp>
+
+		<avp name="MBMS-Service-Area" code="903" must="V,M"	may="P" must-not="-" may-encrypt="Y" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
+
+		<avp name="MBMS-Start-Time" code="3507" must="M,V" may="P" must-not="-" may-encrypt="" vendor-id="10415">
+			<data type="Time"/>
+		</avp>
+
+		<avp name="MB2U-Security" code="3517" must="M,V" may="P" must-not="" may-encrypt="" vendor-id="10415">
+      		<data type="Unsigned32"/>
+    	</avp>
+
+		<avp name="MBMS-Cell-List" code="934" must="V" may="P" must-not="M" may-encrypt="Y" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
+
+		<avp name="Local-M1-Information" code="3518" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Grouped">
+				<rule avp="MBMS-eNB-IP-Multicast-Address" required="false" max="1"/>
+				<rule avp="MBMS-eNB-IPv6-Multicast-Address" required="false" max="1"/>
+				<rule avp="MBMS-GW-SSM-IP-Address" required="false" max="1"/>
+				<rule avp="MBMS-GW-SSM-IPv6-Address" required="false" max="1"/>
+				<rule avp="Common-Tunnel-Endpoint-Identifier" required="false" max="1"/>
+			</data>	
+		</avp>
+
+		<avp name="MBMS-eNB-IP-Multicast-Address" code="3520" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Address"/>
+		</avp>
+
+		<avp name="MBMS-eNB-IPv6-Multicast-Address" code="3521" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Address"/>
+		</avp>
+
+		<avp name="MBMS-GW-SSM-IP-Address" code="3522" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Address"/>
+		</avp>
+
+		<avp name="MBMS-GW-SSM-IPv6-Address" code="3523" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Address"/>
+		</avp>
+
+		<avp name="Common-Tunnel-Endpoint-Identifier" code="3524" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Address"/>
+		</avp>
+
+		<avp name="Local-MB2-U-Information" code="3519" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Grouped">
+				<rule avp="BMSC-Address" required="false" max="1"/>
+				<rule avp="BMSC-Port" required="false" max="1"/>
+			</data>	
+		</avp>
+
+		<avp name="BMSC-Address" code="3500" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="">
+			<data type="Address"/>
+		</avp>
+
+		<avp name="BMSC-Port" code="3501" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="FEC-Request" code="3525" must="V" may="P" must-not="M" may-encrypt="" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
+
+		<avp name="ROHC-Request" code="3526" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Grouped">
+				<rule avp="Flow-Description" required="true" max=""/>
+				<rule avp="ROHC-Full-Header-Periodicity" required="false" max="1"/>
+				<rule avp="ROHC-Profile" required="true" max="1"/>
+			</data>	
+		</avp>
+
+		<avp name="Flow-Description" code="507" must="M,V" may="P" may-encrypt="Y" vendor-id="10415">
+            <data type="IPFilterRule"/>
+        </avp>
+	
+		<avp name="ROHC-Full-Header-Periodicity" code="3527" must="V" may="P" must-not="M" may-encrypt="" vendor-id="10415">
+            <data type="Float32"/>
+        </avp>
+	
+		<avp name="ROHC-Profile" code="3528" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Unsigned32"/>
+		</avp>
 
 		<avp name="Session-Id" code="263" must="M" may="P" must-not="V" may-encrypt="Y">
 			<data type="UTF8String"/>
