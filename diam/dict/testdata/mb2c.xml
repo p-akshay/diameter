@@ -335,7 +335,7 @@
 			<data type="OctetString"/>
 		</avp>
 
-		<avp name="MBMS-Bearer-Request" code="3504" vendor-id="10415" must="M" may="P" must-not="P,V" may-encrypt="-">
+		<avp name="MBMS-Bearer-Request" code="3504" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="-">
 			<data type="Grouped">
 				<rule avp="MBMS-StartStop-Indication" required="true" max="1"/>
 				<rule avp="TMGI" required="false" max="1"/>
@@ -619,6 +619,48 @@
         </avp>
 	
 		<avp name="ROHC-Profile" code="3528" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="MBMS-Bearer-Response" code="3505" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="">
+			<data type="Grouped">
+  				<rule avp="TMGI" required="false" max="1"/>
+				<rule avp="MBMS-Flow-Identifier" required="false" max="1"/>
+				<rule avp="MBMS-Session-Duration" required="false" max="1"/>
+				<rule avp="MBMS-Bearer-Result" required="false" max="1"/>
+				<rule avp="BMSC-Address" required="false" max="1"/>
+				<rule avp="BMSC-Port" required="false" max="1"/>
+				<rule avp="MB2U-Security" required="false" max="1"/>
+				<rule avp="Radio-Frequency" required="false" max="1"/>
+				<rule avp="Userplane-Protocol-Result" required="false" max=""/>
+			</data>	
+		</avp>
+
+		<avp name="MBMS-Session-Duration" code="904" must="M,V" may="P" may-encrypt="Y" vendor-id="10415">
+			<data type="OctetString"/>
+		</avp>
+
+		<avp name="MBMS-Bearer-Result" code="3506" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Radio-Frequency" code="3508" vendor-id="10415" must="M,V" may="P" must-not="" may-encrypt="">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="Userplane-Protocol-Result" code="3529" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Grouped">
+				<rule avp="Flow-Description" required="false" max=""/>
+				<rule avp="ROHC-Result" required="false" max="1"/>
+				<rule avp="FEC-Result" required="false" max="1"/>
+			</data>	
+		</avp>
+
+		<avp name="ROHC-Result" code="3530" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
+			<data type="Unsigned32"/>
+		</avp>
+
+		<avp name="FEC-Result" code="3531" vendor-id="10415" must="V" may="P" must-not="M" may-encrypt="">
 			<data type="Unsigned32"/>
 		</avp>
 
