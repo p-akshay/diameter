@@ -56,7 +56,7 @@
 				<rule avp="Restart-Counter" required="false" max="1"/>
 			</request>
 			<answer>
-			<rule avp="Session-Id" required="true" max="1"/>
+				<rule avp="Session-Id" required="true" max="1"/>
 				<rule avp="DRMP" required="false" max="1"/>
 				<rule avp="Auth-Application-Id" required="true" max="1"/>
 				<rule avp="Auth-Session-State" required="true" max="1"/>
@@ -73,9 +73,9 @@
 				<rule avp="Redirect-Max-Cache-Time" required="false" max="1"/>
 				<rule avp="Proxy-Info" required="false"/>
 				<rule avp="Supported-Features" required="true"/>
-				<rule avp="TMGI-Allocation-Request" required="false" max="1"/>
-				<rule avp="TMGI-Deallocation-Request" required="false" max="1"/>
-				<rule avp="MBMS-Bearer-Request" required="false" />
+				<rule avp="TMGI-Allocation-Response" required="false" max="1"/>
+				<rule avp="TMGI-Deallocation-Response" required="false" max=""/>
+				<rule avp="MBMS-Bearer-Response" required="false" max="" />
 				<rule avp="Restart-Counter" required="false" max="1"/>
 			</answer>
 		</command>
