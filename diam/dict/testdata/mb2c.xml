@@ -310,11 +310,23 @@
 			<data type="Unsigned32"/>
 		</avp>
 
-		<avp name="TMGI-Allocation-Request" code="3509" vendor-id="10415" must="V" may="M" may-encrypt="N">
+		<avp name="TMGI-Allocation-Request" code="3509" vendor-id="10415" must="M,V" may="P" may-encrypt="N">
 			<data type="Grouped">
 				<rule avp="TMGI-Number" required="true" max="1"/>
 				<rule avp="TMGI" required="false" max=""/>
 			</data>
+		</avp>
+
+		<avp name="TMGI-Allocation-Response" code="3510" vendor-id="10415" must="M,V" may="P" may-encrypt="N">
+			<data type="Grouped">
+				<rule avp="TMGI" required="false" max=""/>
+				<rule avp="MBMS-Session-Duration" required="false" max="1"/>
+				<rule avp="TMGI-Allocation-Result" required="false" max="1"/>
+			</data>
+		</avp>
+
+		<avp name="TMGI-Allocation-Result" code="3511" must="M,V" may="P" must_not="" may-encrypt="" vendor-id="10415">
+			<data type="Unsigned32"/>
 		</avp>
 
 		<avp name="TMGI-Number" code="3516" must="V" must_not="M" may-encrypt="N" vendor-id="10415">
@@ -325,10 +337,21 @@
 			<data type="OctetString"/>
 		</avp>
 
-		<avp name="TMGI-Deallocation-Request" code="3512" vendor-id="10415" must="V" may="M" may-encrypt="N">
+		<avp name="TMGI-Deallocation-Request" code="3512" vendor-id="10415" must="M,V" may="P" may-encrypt="N">
 			<data type="Grouped">
 				<rule avp="TMGI" required="false" max=""/>
 			</data>
+		</avp>
+
+		<avp name="TMGI-Deallocation-Response" code="3513" vendor-id="10415" must="M,V" may="P" may-encrypt="N">
+			<data type="Grouped">
+				<rule avp="TMGI" required="true" max="1"/>
+				<rule avp="TMGI-Deallocation-Result" required="false" max="1"/>
+			</data>
+		</avp>
+
+		<avp name="TMGI-Deallocation-Result" code="3514" must="M,V" may="P" must_not="" may-encrypt="" vendor-id="10415">
+			<data type="Unsigned32"/>
 		</avp>
 
 		<avp name="Restart-Counter" code="932" vendor-id="10415" must="M" may="P" must-not="V" may-encrypt="-">
