@@ -17,6 +17,8 @@ const (
 	CreditControl             = 272
 	DeviceWatchdog            = 280
 	DisconnectPeer            = 282
+	GCSAction                 = 8388662
+	GCSNotification           = 8388663
 	InsertSubscriberData      = 319
 	MultimediaAuthentication  = 303
 	Notify                    = 323
@@ -50,6 +52,10 @@ const (
 	DPR = "DPR"
 	DWA = "DWA"
 	DWR = "DWR"
+	GAA = "GAA"
+	GAR = "GAR"
+	GNA = "GNA"
+	GNR = "GNR"
 	IDA = "IDA"
 	IDR = "IDR"
 	MAA = "MAA"

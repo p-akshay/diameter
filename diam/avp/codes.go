@@ -8,29 +8,6 @@ package avp
 
 // Diameter AVP types.
 const (
-	//	3GPP Rx Specific AVPs
-	AFAppId              = 504
-	ReservationPriority  = 458
-	RxRequestType        = 533
-	McpttIdentifier      = 547
-	ServiceInfoStatus    = 527
-	MediaCompDescp       = 517
-	CodecData            = 524
-	ContentVersion       = 552
-	MediaComponentNumber = 518
-	MediaSubComponent    = 519
-	MediaType            = 520
-	FlowNumber           = 509
-	FlowStatus           = 511
-	FlowUsage            = 512
-	AFSignallingProtocol = 529
-
-	//	MB2-C
-	TMGIAllocationRequest   = 3509
-	TMGIDeallocationRequest = 3512
-	TMGINumber              = 3516
-
-	//	Default
 	AccessNetworkChargingAddress               = 501
 	AccessNetworkChargingIdentifierGx          = 1022
 	AccessNetworkChargingIdentifierValue       = 503
@@ -68,6 +45,7 @@ const (
 	AddressDomain                              = 898
 	AddresseeType                              = 1208
 	AddressType                                = 899
+	AFApplicationIdentifier                    = 504
 	AFChargingIdentifier                       = 505
 	AFCorrelationInformation                   = 1276
 	AllAPNConfigurationsIncludedIndicator      = 1428
@@ -120,6 +98,8 @@ const (
 	BearerIdentifier                           = 1020
 	BearerService                              = 854
 	BearerUsage                                = 1000
+	BMSCAddress                                = 3500
+	BMSCPort                                   = 3501
 	BSSID                                      = 2716
 	CallbackID                                 = 20
 	CallbackNumber                             = 19
@@ -168,7 +148,9 @@ const (
 	CLRFlags                                   = 1638
 	CNIPMulticastDistribution                  = 921
 	CNOperatorSelectionEntity                  = 3421
+	CommonTunnelEndpointIdentifier             = 3524
 	CompleteDataListIncludedIndicator          = 1468
+	ConditionalAPNAggregateMaxBitrate          = 2818
 	ConfidentialityKey                         = 625
 	ConfigurationToken                         = 78
 	ConnectInfo                                = 77
@@ -241,6 +223,8 @@ const (
 	FailedAVP                                  = 279
 	FeatureList                                = 630
 	FeatureListID                              = 629
+	FECRequest                                 = 3525
+	FECResult                                  = 3531
 	FileRepairSupported                        = 1224
 	FilterID                                   = 11
 	FinalUnitAction                            = 449
@@ -333,6 +317,8 @@ const (
 	LCSRequestorIDString                       = 1240
 	LIPAPermission                             = 1618
 	LocalGWInsertedIndication                  = 2604
+	LocalM1Information                         = 3518
+	LocalMB2UInformation                       = 3519
 	LocalSequenceNumber                        = 2063
 	LocationEstimate                           = 1242
 	LocationEstimateType                       = 1243
@@ -350,16 +336,31 @@ const (
 	MandatoryCapability                        = 604
 	MaxRequestedBandwidthDL                    = 515
 	MaxRequestedBandwidthUL                    = 516
+	MB2USecurity                               = 3517
 	MBMS2G3GIndicator                          = 907
+	MBMSBearerRequest                          = 3504
+	MBMSBearerResponse                         = 3505
+	MBMSBearerResult                           = 3506
+	MBMSCellList                               = 934
 	MBMSChargedParty                           = 2323
+	MBMSeNBIPMulticastAddress                  = 3520
+	MBMSeNBIPv6MulticastAddress                = 3521
+	MBMSFlowIdentifier                         = 920
 	MBMSGWAddress                              = 2307
+	MBMSGWSSMIPAddress                         = 3522
+	MBMSGWSSMIPv6Address                       = 3523
 	MBMSInformation                            = 880
 	MBMSServiceArea                            = 903
 	MBMSServiceType                            = 906
+	MBMSSessionDuration                        = 904
 	MBMSSessionIdentity                        = 908
+	MBMSStartStopIndication                    = 902
+	MBMSStartTime                              = 3507
 	MBMSUserServiceType                        = 1225
+	MCPTTIdentifier                            = 547
 	MDTConfiguration                           = 1622
 	MDTUserConsent                             = 1634
+	MediaComponentDescription                  = 517
 	MediaInitiatorFlag                         = 882
 	MediaInitiatorParty                        = 1288
 	MessageBody                                = 889
@@ -500,6 +501,7 @@ const (
 	QoSSubscribed                              = 1404
 	QuotaConsumptionTime                       = 881
 	QuotaHoldingTime                           = 871
+	RadioFrequency                             = 3508
 	RAI                                        = 909
 	RAND                                       = 1447
 	RateElement                                = 2058
@@ -544,17 +546,24 @@ const (
 	RequestedServiceUnit                       = 437
 	RequestedUTRANGERANAuthenticationInfo      = 1409
 	RequiredMBMSBearerCapabilities             = 901
+	ReservationPriority                        = 458
+	RestartCounter                             = 932
 	RestrictionFilterRule                      = 438
 	ResultCode                                 = 268
 	ResynchronizationInfo                      = 1411
 	RevalidationTime                           = 1042
 	RoamingRestrictedDueToUnsupportedFeature   = 1457
+	ROHCFullHeaderPeriodicity                  = 3527
+	ROHCProfile                                = 3528
+	ROHCRequest                                = 3526
+	ROHCResult                                 = 3530
 	RoleOfNode                                 = 829
 	RouteHeaderReceived                        = 3403
 	RouteHeaderTransmitted                     = 3404
 	RouteRecord                                = 282
 	RuleActivationTime                         = 1043
 	RuleDeactivationTime                       = 1044
+	RxRequestType                              = 533
 	ScaleFactor                                = 2059
 	SDPAnswerTimestamp                         = 1275
 	SDPMediaComponent                          = 843
@@ -574,6 +583,7 @@ const (
 	ServiceID                                  = 855
 	ServiceIdentifier                          = 439
 	ServiceInformation                         = 873
+	ServiceInfoStatus                          = 527
 	ServiceMode                                = 2032
 	ServiceParameterInfo                       = 440
 	ServiceParameterType                       = 441
@@ -687,6 +697,13 @@ const (
 	TimeStamps                                 = 833
 	TimeUsage                                  = 2045
 	TMGI                                       = 900
+	TMGIAllocationRequest                      = 3509
+	TMGIAllocationResponse                     = 3510
+	TMGIAllocationResult                       = 3511
+	TMGIDeallocationRequest                    = 3512
+	TMGIDeallocationResponse                   = 3513
+	TMGIDeallocationResult                     = 3514
+	TMGINumber                                 = 3516
 	TokenText                                  = 1215
 	ToSTrafficClass                            = 1014
 	TotalNumberOfMessagesExploded              = 2113
@@ -740,6 +757,7 @@ const (
 	UserName                                   = 1
 	UserParticipatingType                      = 1279
 	UserPassword                               = 2
+	UserplaneProtocolResult                    = 3529
 	UserSessionID                              = 830
 	UTRANVector                                = 1415
 	ValidityTime                               = 448
