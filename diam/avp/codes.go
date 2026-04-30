@@ -46,6 +46,7 @@ const (
 	AddresseeType                              = 1208
 	AddressType                                = 899
 	AFApplicationIdentifier                    = 504
+	AFAppId                                    = AFApplicationIdentifier
 	AFChargingIdentifier                       = 505
 	AFCorrelationInformation                   = 1276
 	AllAPNConfigurationsIncludedIndicator      = 1428
@@ -232,6 +233,9 @@ const (
 	FirmwareRevision                           = 267
 	FixedUserLocationInfo                      = 2825
 	FlowDescription                            = 507
+	FlowNumber                                 = 509
+	FlowStatus                                 = 511
+	FlowUsage                                  = 512
 	FlowDirection                              = 1080
 	FlowInformation                            = 1058
 	FlowLabel                                  = 1057
@@ -358,9 +362,15 @@ const (
 	MBMSStartTime                              = 3507
 	MBMSUserServiceType                        = 1225
 	MCPTTIdentifier                            = 547
+	McpttIdentifier                            = MCPTTIdentifier
 	MDTConfiguration                           = 1622
 	MDTUserConsent                             = 1634
 	MediaComponentDescription                  = 517
+	MediaCompDescp                             = MediaComponentDescription
+	MediaComponentNumber                       = 518
+	MediaSubComponent                          = 519
+	MediaType                                  = 520
+	CodecData                                  = 524
 	MediaInitiatorFlag                         = 882
 	MediaInitiatorParty                        = 1288
 	MessageBody                                = 889
